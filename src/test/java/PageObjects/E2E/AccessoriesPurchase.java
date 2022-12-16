@@ -1,4 +1,4 @@
-package pageObjects;
+package PageObjects.E2E;
 
 
 import org.openqa.selenium.WebElement;

@@ -1,4 +1,4 @@
-package pageObjects;
+package PageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -16,6 +16,5 @@ public class CheckOutAsGuest {
     public void checkOut(){
         wait.until(ExpectedConditions.textToBe(By.cssSelector(".cart-qty"), "(1)"));
         checkOutAsGuest.click();
-
     }
 }

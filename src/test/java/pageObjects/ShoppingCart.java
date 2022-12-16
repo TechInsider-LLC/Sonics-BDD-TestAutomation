@@ -1,4 +1,4 @@
-package pageObjects;
+package PageObjects;
 
 
 import org.openqa.selenium.By;
@@ -14,7 +14,7 @@ import static utility.Hooks.wait;
 
 public class ShoppingCart {
 
-    pageObjects.BarNotification notification = PageFactory.initElements(driver, pageObjects.BarNotification.class);
+    PageObjects.BarNotification notification = PageFactory.initElements(driver, PageObjects.BarNotification.class);
 
     @FindBy(xpath ="//*[contains(text(),'Shopping')]" )
     @CacheLookup
