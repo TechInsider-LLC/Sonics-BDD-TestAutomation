@@ -17,6 +17,7 @@ public class accessories {
         shoppingCart.checkout();
         checkOutAsGuest.checkOut();
         checkout.checkoutAsGuest("Alisa", "Li", "Smart123@gmail.com", "United States", "Brooklyn", "531E7th str","11218","3475612347");
+
     }
 
     @When("Registered user buys accessories")
