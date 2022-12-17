@@ -8,8 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.sql.DriverManager;
 
-import static utility.Hooks.driver;
-import static utility.Hooks.wait;
+import static utilities.Hooks.driver;
+import static utilities.Hooks.wait;
 
 public class BookPurchase{
         @FindBy(css = "[href=\"/books\"]")

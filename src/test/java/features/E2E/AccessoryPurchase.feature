@@ -1,3 +1,4 @@
+@regression
 Feature: Accessories
   Scenario: User buys accessories
     Given  Guest User is on the Homepage
