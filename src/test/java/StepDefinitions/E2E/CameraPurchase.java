@@ -3,7 +3,7 @@ package StepDefinitions.E2E;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.support.PageFactory;
 
-import static utility.Hooks.driver;
+import static utilities.Hooks.driver;
 
 public class CameraPurchase {
     PageObjects.E2E.CameraPurchase cameraPurchase = PageFactory.initElements(driver, PageObjects.E2E.CameraPurchase.class);

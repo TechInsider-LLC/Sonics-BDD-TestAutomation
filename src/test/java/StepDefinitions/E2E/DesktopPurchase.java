@@ -4,7 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.support.PageFactory;
-import static utility.Hooks.driver;
+import static utilities.Hooks.driver;
 
 
 public class DesktopPurchase {

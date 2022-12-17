@@ -5,7 +5,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
-import static utility.Hooks.driver;
+import static utilities.Hooks.driver;
 
 public class CameraPurchase {
 

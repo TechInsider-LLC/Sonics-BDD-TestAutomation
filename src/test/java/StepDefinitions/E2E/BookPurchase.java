@@ -5,7 +5,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.support.PageFactory;
 
 import static org.junit.Assert.assertTrue;
-import static utility.Hooks.driver;
+import static utilities.Hooks.driver;
 
 
 public class BookPurchase {

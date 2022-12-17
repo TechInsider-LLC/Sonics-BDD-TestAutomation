@@ -1,4 +1,4 @@
-package pageObjects;
+package PageObjects;
 
 public class delete {
 }

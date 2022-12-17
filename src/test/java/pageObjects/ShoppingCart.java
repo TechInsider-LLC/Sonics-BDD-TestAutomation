@@ -9,8 +9,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import static utility.Hooks.driver;
-import static utility.Hooks.wait;
+import static utilities.Hooks.driver;
+import static utilities.Hooks.wait;
 
 public class ShoppingCart {
 

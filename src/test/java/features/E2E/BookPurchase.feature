@@ -1,3 +1,4 @@
+@regression
 Feature: Check out a Book
   Scenario: Guest User user buys a book
     Given Guest User is on the Homepage
