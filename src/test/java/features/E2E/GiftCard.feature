@@ -1,3 +1,4 @@
+@regression
 Feature: Gift Card
   Scenario: User buys Gift Card
     Given Guest User is on the Homepage
