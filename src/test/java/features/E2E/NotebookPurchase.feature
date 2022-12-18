@@ -1,3 +1,4 @@
+@regression
 Feature: Notebook Purchase
   Scenario: Guest user buys Notebook
     Given Guest User is on the Homepage

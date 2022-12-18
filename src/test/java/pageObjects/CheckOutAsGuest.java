@@ -14,6 +14,7 @@ public class CheckOutAsGuest {
     @CacheLookup
     WebElement checkOutAsGuest;
     public void checkOut(){
+       // wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#topcartlink .cart-qty")));
         wait.until(ExpectedConditions.textToBe(By.cssSelector(".cart-qty"), "(1)"));
         checkOutAsGuest.click();
     }

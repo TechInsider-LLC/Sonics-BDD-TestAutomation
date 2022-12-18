@@ -1,3 +1,4 @@
+@regression
 Feature: Purchase Desktop as a Guest
   Scenario: Guest User can purchase a Desktop
     Given Guest User is on the Homepage

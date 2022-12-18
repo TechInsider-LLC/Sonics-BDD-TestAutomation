@@ -1,3 +1,4 @@
+@regression
 Feature: Jewelry Purchase
   Scenario: User buys Jewelry
     Given Guest User is on the Homepage
