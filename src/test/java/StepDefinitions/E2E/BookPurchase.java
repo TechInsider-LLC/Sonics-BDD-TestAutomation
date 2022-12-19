@@ -10,6 +10,7 @@ import static utilities.Hooks.driver;
 
 public class BookPurchase {
     PageObjects.E2E.BookPurchase bookPurchase = PageFactory.initElements(driver, PageObjects.E2E.BookPurchase.class);
+    PageObjects.ShoppingCart shoppingCart = PageFactory.initElements(driver, PageObjects.ShoppingCart.class);
     PageObjects.SecondShoppingCart secondShoppingCart = PageFactory.initElements(driver,PageObjects.SecondShoppingCart.class);
     PageObjects.Checkout checkout = PageFactory.initElements(driver,PageObjects.Checkout.class);
     PageObjects.CheckOutAsGuest checkOutAsGuest = PageFactory.initElements(driver,PageObjects.CheckOutAsGuest.class);
@@ -22,7 +23,7 @@ public class BookPurchase {
     @When("Guest User buys a book")
     public void guest_user_buys_a_book() {
             bookPurchase.addToCartProcess();
-            secondShoppingCart.checkout();
+            shoppingCart.checkout();
             checkOutAsGuest.checkOut();
             checkout.checkoutAsGuest("Diane","Clark","kdb@gmail.com","United States","Gfed","vjh dv dv","12345","1234567890");
 
@@ -44,7 +45,7 @@ public class BookPurchase {
         logIn.with("inogomovam@gmail.com","Dina1234");
         bookPurchase.homepage();
         bookPurchase.addToCartProcess();
-        secondShoppingCart.checkout();
+        shoppingCart.checkout();
         checkout.checkout();
     }
 
