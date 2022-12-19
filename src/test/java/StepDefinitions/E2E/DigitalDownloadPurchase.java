@@ -8,9 +8,9 @@ import static utilities.Hooks.driver;
 public class DigitalDownloadPurchase {
     PageObjects.E2E.DigitalDownloadPurchase digitalDownloadPurchase = PageFactory.initElements(driver, PageObjects.E2E.DigitalDownloadPurchase.class);
     PageObjects.ShoppingCart shoppingCart = PageFactory.initElements(driver, PageObjects.ShoppingCart.class);
-    PageObjects.Checkout checkout = PageFactory.initElements(driver, PageObjects.Checkout.class);
     PageObjects.CheckOutAsGuest checkOutAsGuest = PageFactory.initElements(driver, PageObjects.CheckOutAsGuest.class);
     PageObjects.LogIn logIn = PageFactory.initElements(driver, PageObjects.LogIn.class);
+    PageObjects.DigitalDownloadCheckout digitalDownloadCheckout = PageFactory.initElements(driver, PageObjects.DigitalDownloadCheckout.class);
 
 
     @When("User purchase a Digital Downloads")
@@ -18,7 +18,7 @@ public class DigitalDownloadPurchase {
         digitalDownloadPurchase.addToCartProcess();
         shoppingCart.checkout();
         checkOutAsGuest.checkOut();
-        checkout.checkoutAsGuest("Alisa", "Li", "Smart123@gmail.com", "United States", "Brooklyn", "531E7th str", "11218", "3475612347");
+        digitalDownloadCheckout.checkout("Alisa", "Li", "Smart123@gmail.com", "United States", "Brooklyn", "531E7th str", "11218", "3475612347");
     }
 
 
@@ -28,6 +28,6 @@ public class DigitalDownloadPurchase {
         digitalDownloadPurchase.homepage();
         digitalDownloadPurchase.addToCartProcess();
         shoppingCart.checkout();
-        checkout.checkout();
+        digitalDownloadCheckout.checkOut();
     }
 }
