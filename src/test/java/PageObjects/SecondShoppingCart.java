@@ -5,7 +5,8 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
 public class SecondShoppingCart {
-    @FindBy(xpath = "//*[contains(text(),'Shopping')]")
+
+    @FindBy (xpath = "//*[contains(text(),'Shopping')]")
     @CacheLookup
     WebElement shoppingCartLink;
 
