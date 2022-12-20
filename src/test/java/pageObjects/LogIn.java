@@ -37,13 +37,16 @@ public class LogIn {
 
     }
     public void visit(){
+
         driver.get(url);
     }
+
     public boolean isSuccessMessagePresent(){
 
         return LogOut.isDisplayed();
     }
     public boolean isWrongPasswordMessagePresent(){
+
         String expected = "The credentials provided are incorrect";
         String actual = WrongPasswordMessage.getText();
         return expected.equals(actual);
