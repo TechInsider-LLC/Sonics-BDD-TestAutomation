@@ -1,4 +1,4 @@
-@regression
+@regression @cameraPurchase
 Feature: Camera Purchase
   Scenario: User Purchases a Camera
     Given Guest User is on the Homepage
