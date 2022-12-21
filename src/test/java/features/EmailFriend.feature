@@ -1,4 +1,3 @@
-@regression
 Feature: Email Friend
   Scenario:User emails a friend
     Given User Logs in
