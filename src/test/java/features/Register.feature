@@ -2,14 +2,14 @@
 Feature: User Registration
 
   Scenario: User registers successfully
-    Given User has valid credentials
-    When User registers or signs up
-    Then User should get success message
+    Given Customer has valid credentials
+    When Customer registers or signs up
+    Then Customer should get success message
 
   Scenario: Invalid email
-    Given user has invalid credentials
-    When User tries to signs in with invalid email
-    Then User should get invalid email message
+    Given Customer has invalid credentials
+    When Customer tries to signs in with invalid email
+    Then Customer should get invalid email message
 
   Scenario: All Empty Error messages
     Given  Go to register page

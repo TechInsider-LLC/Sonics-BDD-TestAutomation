@@ -12,33 +12,33 @@ import static utilities.Hooks.driver;
 public class Register {
 
     PageObjects.Register register = PageFactory.initElements(driver, PageObjects.Register.class);
-    @Given("User has valid credentials")
-    public void user_has_valid_credentials() {
+    @Given("Customer has valid credentials")
+    public void customer_has_valid_credentials() {
         register.visit();
     }
-    @When("User registers or signs up")
-    public void user_registers_or_signs_up() throws InterruptedException {
+    @When("Customer registers or signs up")
+    public void cutomer_registers_or_signs_up() throws InterruptedException {
         register.process("Diora","John", RandomGmail.getRandomGmail(6),"Sonics1234","Sonics1234");
     }
 
-    @Then("User should get success message")
-    public void user_should_get_success_message() throws InterruptedException {
+    @Then("Customer should get success message")
+    public void customer_should_get_success_message() throws InterruptedException {
         assertTrue(register.isSuccessMessagePresent());
     }
 
 
 
-    @Given("user has invalid credentials")
-    public void user_has_invalid_credentials() {
+    @Given("Customer has invalid credentials")
+    public void cutomer_has_invalid_credentials() {
         register.visit();
     }
 
-    @When("User tries to signs in with invalid email")
-    public void user_tries_to_signs_in_with_invalid_email() {
+    @When("Customer tries to signs in with invalid email")
+    public void cutomer_tries_to_signs_in_with_invalid_email() {
         register.process("Diora","John","adcdef","Sonics1234","Sonics1234");
     }
-    @Then("User should get invalid email message")
-    public void user_should_get_invalid_email_message() {
+    @Then("Customer should get invalid email message")
+    public void customer_should_get_invalid_email_message() {
         assertTrue(register.isInvalidEmailMessagePresent());
     }
 
