@@ -8,9 +8,9 @@ Feature: Address Change
   Scenario: User edits the address
       Given User logs in
       When User edits the address
-      Then User gets the success message
+      Then User gets the edit message
 
   Scenario: User deletes the address
-    Given
-    When
-    Then
+    Given User logs in
+    When User deletes the address
+    Then User gets the delete message
