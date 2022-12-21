@@ -29,9 +29,9 @@ public class UpdateCustomerInfo {
     @CacheLookup
     WebElement saveButton;
 
-    @FindBy(css = ".header-links [href=\"/customer/info\"]")
+    @FindBy(css = "#FirstName")
     @CacheLookup
-    WebElement isUpdateAccountDisplayed;
+    WebElement isFirstNameUpdated;
 
     public void homepage() {
 
@@ -47,12 +47,11 @@ public class UpdateCustomerInfo {
         saveButton.click();
     }
 
-    /*  public static boolean isUpdateAccountDisplayed() {
-     *//* String expected = RandomName;
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".header-links [href=\"/customer/info\"]"))).getText();
-        String actual = UpdateCustomerInfo.getText();
-        return expected.equals(actual);*/
+    public static boolean isFirstNameUpdated() {
+        String expected = "RandomName";
+        String actual = driver.findElement(By.cssSelector("#FirstName")).getText();
+        return (expected.contains(actual));
+    }
+
 }
-
-
 
