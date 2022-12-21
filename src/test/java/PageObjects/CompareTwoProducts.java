@@ -53,6 +53,7 @@ public class CompareTwoProducts {
     public static String url = "https://demowebshop.tricentis.com/";
 
     public void home(){
+
         driver.get(url);
     }
 
