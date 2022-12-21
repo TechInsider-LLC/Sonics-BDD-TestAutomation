@@ -1,4 +1,4 @@
-package StepDefinitions.E2E;
+package StepDefinitions;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
