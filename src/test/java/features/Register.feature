@@ -17,6 +17,6 @@ Feature: User Registration
     Then Verify the first error message using
 
   Scenario: Not matching password
-    Given User enters different password
-    When User enters not matching password
-    Then User should get invalid password message
+    Given Customer enters different password
+    When Customer enters not matching password
+    Then Customer should get invalid password message
