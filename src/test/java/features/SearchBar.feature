@@ -1,3 +1,4 @@
+@regression
 Feature: Search bar
   Scenario: Guest customer able to search a Health book
     Given Guest customer is on the Homepage
