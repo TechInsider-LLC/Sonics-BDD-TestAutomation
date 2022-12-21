@@ -12,18 +12,17 @@ import static utilities.Hooks.driver;
 public class Register {
 
     PageObjects.Register register = PageFactory.initElements(driver, PageObjects.Register.class);
+
     @Given("Customer has valid credentials")
     public void customer_has_valid_credentials() {
         register.visit();
     }
+
     @When("Customer registers or signs up")
-<<<<<<< Updated upstream
-    public void cutomer_registers_or_signs_up() throws InterruptedException {
-=======
     public void customer_registers_or_signs_up() throws InterruptedException {
->>>>>>> Stashed changes
         register.process("Diora","John", RandomGmail.getRandomGmail(6),"Sonics1234","Sonics1234");
-    }
+        }
+
 
     @Then("Customer should get success message")
     public void customer_should_get_success_message() throws InterruptedException {
@@ -32,22 +31,13 @@ public class Register {
 
 
 
-<<<<<<< Updated upstream
     @Given("Customer has invalid credentials")
-    public void cutomer_has_invalid_credentials() {
-=======
-    @Given("customer has invalid credentials")
     public void customer_has_invalid_credentials() {
->>>>>>> Stashed changes
         register.visit();
     }
 
     @When("Customer tries to signs in with invalid email")
-<<<<<<< Updated upstream
-    public void cutomer_tries_to_signs_in_with_invalid_email() {
-=======
     public void customer_tries_to_signs_in_with_invalid_email() {
->>>>>>> Stashed changes
         register.process("Diora","John","adcdef","Sonics1234","Sonics1234");
     }
     @Then("Customer should get invalid email message")
