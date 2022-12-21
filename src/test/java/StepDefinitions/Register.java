@@ -17,7 +17,11 @@ public class Register {
         register.visit();
     }
     @When("Customer registers or signs up")
+<<<<<<< Updated upstream
     public void cutomer_registers_or_signs_up() throws InterruptedException {
+=======
+    public void customer_registers_or_signs_up() throws InterruptedException {
+>>>>>>> Stashed changes
         register.process("Diora","John", RandomGmail.getRandomGmail(6),"Sonics1234","Sonics1234");
     }
 
@@ -28,13 +32,22 @@ public class Register {
 
 
 
+<<<<<<< Updated upstream
     @Given("Customer has invalid credentials")
     public void cutomer_has_invalid_credentials() {
+=======
+    @Given("customer has invalid credentials")
+    public void customer_has_invalid_credentials() {
+>>>>>>> Stashed changes
         register.visit();
     }
 
     @When("Customer tries to signs in with invalid email")
+<<<<<<< Updated upstream
     public void cutomer_tries_to_signs_in_with_invalid_email() {
+=======
+    public void customer_tries_to_signs_in_with_invalid_email() {
+>>>>>>> Stashed changes
         register.process("Diora","John","adcdef","Sonics1234","Sonics1234");
     }
     @Then("Customer should get invalid email message")
@@ -57,16 +70,16 @@ public class Register {
     }
 
 
-    @Given("User enters different password")
-    public void user_enters_different_password() throws InterruptedException {
+    @Given("Customer enters different password")
+    public void customer_enters_different_password() throws InterruptedException {
         register.visit();
     }
-    @When("User enters not matching password")
-    public void user_enters_not_matching_password() throws InterruptedException {
+    @When("Customer enters not matching password")
+    public void customer_enters_not_matching_password() throws InterruptedException {
         register.process("Diora","John",RandomGmail.getRandomGmail(6),"Sonics1234","sonics1234");
     }
-    @Then("User should get invalid password message")
-    public void user_should_get_invalid_password_message() throws InterruptedException {
+    @Then("Customer should get invalid password message")
+    public void customer_should_get_invalid_password_message() throws InterruptedException {
         assertTrue(register.isNotMatchingPasswordPresent());
     }
 
