@@ -28,7 +28,7 @@ public class ReorderProduct {
     @CacheLookup
     WebElement termOfService;
 
-    @FindBy(css ="+.checkout-button")
+    @FindBy(css =".checkout-button")
     @CacheLookup
     WebElement checkout;
 
