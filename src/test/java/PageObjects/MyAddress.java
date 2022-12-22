@@ -1,6 +1,5 @@
 package PageObjects;
 
-import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -8,6 +7,7 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import static org.junit.Assert.assertTrue;
 import static utilities.Hooks.driver;
 import static utilities.Hooks.wait;
 
@@ -75,6 +75,18 @@ public class MyAddress {
     @CacheLookup
     WebElement faxNumber;
 
+    @FindBy(xpath = "//*[@class='title']/*[contains(text(),'Liza Sankovsky')]")
+    @CacheLookup
+    WebElement customerNameActualResult;
+
+    @FindBy(xpath = "//*[@class='company']/..//*[contains(text(),'Lala Island')]")
+    @CacheLookup
+    WebElement presentChangesActualResult;
+
+    @FindBy(xpath = "//*[@class='title']/*[contains(text(),'Eduard W4RRGDGS')]")
+    @CacheLookup
+    WebElement newAddressDeletedActualResult;
+
     public void homepage() {
         driver.get(url);
     }
@@ -114,15 +126,24 @@ public class MyAddress {
     public boolean isCustomerNamePresent(){
         String expected = "Liza Sankovsky";
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@class='title']/*[contains(text(),'Liza Sankovsky')]")));
-        String actual = driver.findElement(By.xpath("//*[@class='title']/*[contains(text(),'Liza Sankovsky')]")).getText();
-        return (expected.contains(actual));
+        String actual = customerNameActualResult.getText();
+
+        if (actual.equals("")){
+            return false;
+        }else{
+            return expected.contains(actual);
+        }
     }
 
  public boolean areChangesPresent(){
         String expected = "Lala Island";
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@class='company']/..//*[contains(text(),'Lala Island')]")));
-        String actual = driver.findElement(By.xpath("//*[@class='company']/..//*[contains(text(),'Lala Island')]")).getText();
-        return (expected.contains(actual));
+        String actual = presentChangesActualResult.getText();
+     if (actual.equals("")){
+         return false;
+     }else{
+         return expected.contains(actual);
+     }
     }
 
  public boolean isTheNewAddressIsDeleted(){
@@ -130,8 +151,12 @@ public class MyAddress {
         alert.accept();
         String expected = "Eduard W4RRGDGS";
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@class='title']/*[contains(text(),'Eduard W4RRGDGS')]")));
-        String actual = driver.findElement(By.xpath("//*[@class='title']/*[contains(text(),'Eduard W4RRGDGS')]")).getText();
-        return (expected.contains(actual));
+        String actual = newAddressDeletedActualResult.getText();
+     if (actual.equals("")){
+         return false;
+     }else{
+         return expected.contains(actual);
+     }
     }
 
 

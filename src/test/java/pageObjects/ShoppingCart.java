@@ -16,7 +16,7 @@ public class ShoppingCart {
 
     PageObjects.BarNotification notification = PageFactory.initElements(driver, PageObjects.BarNotification.class);
 
-    @FindBy(xpath ="//*[contains(text(),'Shopping')]" )
+    @FindBy(xpath ="//*[contains(text(),'Shopping')]")
     @CacheLookup
     WebElement cart;
 
