@@ -43,23 +43,15 @@ public class NewsLetter {
 
     public boolean isSuccessMessagePresent() {
         String expected = "Thank you for signing up!";
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".newsletter-result-block")));
-        String actual = successMessageActualResult.getText();
-        if (actual.equals("")){
-            return false;
-        }else{
-            return expected.contains(actual);
-        }
+       // wait.until(ExpectedConditions.textToBe(By.xpath("//*[@class='listbox']/..//*[contains(text(),'Thank you for signing up!')]"),expected));
+        String actual= this.successMessageActualResult.getText();
+        return (expected.equals(actual));
     }
 
     public boolean isFailureMessagePresent() {
         String expected = "Enter valid email";
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".newsletter-result-block")));
-        String actual = failureMessageActualResult.getText();
-        if (actual.equals("")){
-            return false;
-        }else{
-            return expected.contains(actual);
-        }
+      //  wait.until(ExpectedConditions.textToBe(By.xpath("//*[@class='listbox']/..//*[contains(text(),'Enter valid email')]"),expected));
+        String actual= this.failureMessageActualResult.getText();
+        return (expected.equals(actual));
     }
 }
