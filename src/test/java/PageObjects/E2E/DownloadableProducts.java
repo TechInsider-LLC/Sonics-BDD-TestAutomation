@@ -63,7 +63,7 @@ public class DownloadableProducts {
         addToCartButton.click();
     }
     public void myAccount(){
-        
+        myAccount.click();
         myAccount.click(); //replace with
         downloadableProduct.click();
     }
