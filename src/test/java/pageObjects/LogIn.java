@@ -54,11 +54,19 @@ public class LogIn {
     public boolean isPleaseEnterAValidEmailAddress(){
         String expected = "Please enter a valid email address.";
         String actual = isPleaseEnterAValidEmailAddress.getText();
-        return expected.equals(actual);
+        if (actual.equals("")){
+            return false;
+        }else{
+            return expected.contains(actual);
+        }
     }
     public boolean isNoCustomerAccountFound(){
         String expected = "No customer account found";
         String actual = isNoCustomerAccountFound.getText();
-        return expected.equals(actual);
+        if (actual.equals("")){
+            return false;
+        }else{
+            return expected.contains(actual);
+        }
     }
 }

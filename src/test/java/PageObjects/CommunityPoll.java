@@ -30,15 +30,22 @@ public class CommunityPoll {
     @CacheLookup
     WebElement voteButton;
 
-    public void vote(){
+    @FindBy(css = ".poll-vote-error")
+    @CacheLookup
+    WebElement actualResult;
 
+    public void vote(){
         excellent.click();
         voteButton.click();
     }
     public boolean isErrorMessageDisplayed(){
         String expected= "Only registered users can vote.";
-        String actual= driver.findElement(By.cssSelector(".poll-vote-error")).getText();
-        return (expected.contains(actual));
+        String actual= actualResult.getText();
+        if (actual.equals("")){
+            return false;
+        }else{
+            return expected.contains(actual);
+        }
     }
 
 
