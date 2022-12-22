@@ -37,13 +37,13 @@ public class NewsLetter {
         String expected = "Thank you for signing up!";
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".newsletter-result-block")));
         String actual = driver.findElement(By.cssSelector(".newsletter-result-block")).getText();
-        return (expected.contains(actual));
+        return (expected.equals(actual));
     }
 
     public boolean isFailureMessagePresent() {
         String expected = "Enter valid email";
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".newsletter-result-block")));
         String actual = driver.findElement(By.cssSelector(".newsletter-result-block")).getText();
-        return (expected.contains(actual));
+        return (expected.equals(actual));
     }
 }
