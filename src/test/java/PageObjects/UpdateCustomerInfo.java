@@ -18,7 +18,7 @@ public class UpdateCustomerInfo {
     WebElement myAccount;
 
     @FindBy(css = "#FirstName")
-   // @CacheLookup
+   @CacheLookup
     WebElement firstName;
 
     @FindBy(css = "#LastName")
@@ -30,8 +30,8 @@ public class UpdateCustomerInfo {
     @CacheLookup
     WebElement saveButton;
     @FindBy(css="#FirstName")
-   // @CacheLookup
-    WebElement updateName;
+   @CacheLookup
+    WebElement firstNameUpdate;
 
 
     public void homepage() {
@@ -47,14 +47,22 @@ public class UpdateCustomerInfo {
         saveButton.click();
     }
 
-    public  boolean isNameUpdated() {
+
+   /* public  boolean isFirstNameUpdated() {
         String expected = name;
-        String actual = updateName.getText();
+        String actual = firstNameUpdate.getText();
         if (actual.equals("")){
             return false;
         }else{
             return expected.contains(actual);
-        }
+        }*/
+
+        public boolean isFirstNameChanged() {
+        String expected = name;
+        String actual = driver.findElement(By.cssSelector("#FirstName")).getText();
+        System.out.println(actual);
+        return (expected.equals(actual));
+
     }
 
 }

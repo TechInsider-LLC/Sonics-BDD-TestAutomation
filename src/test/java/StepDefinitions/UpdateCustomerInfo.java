@@ -29,7 +29,11 @@ public class UpdateCustomerInfo {
     }
     @Then("Registered User gets Customer Info Changed")
     public void registered_user_gets_customer_info_changed() {
-       assertTrue(updateCustomerInfo.isNameUpdated());
+
+       assertTrue(updateCustomerInfo.isFirstNameChanged());
+
+
+
     }
 
 

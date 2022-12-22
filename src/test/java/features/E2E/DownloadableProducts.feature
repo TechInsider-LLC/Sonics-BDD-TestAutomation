@@ -1,3 +1,4 @@
+@regression
 Feature: Downloadable products
   Scenario:User should be able to download product
     Given When user is on the home page
