@@ -1,13 +1,15 @@
 package StepDefinitions;
 
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import utilities.RandomName;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static utilities.Hooks.driver;
 
@@ -27,7 +29,8 @@ public class UpdateCustomerInfo {
     }
     @Then("Registered User gets Customer Info Changed")
     public void registered_user_gets_customer_info_changed() {
-        assertTrue(updateCustomerInfo.isFirstNameUpdated());
+       assertTrue(updateCustomerInfo.isNameUpdated());
     }
+
 
 }
