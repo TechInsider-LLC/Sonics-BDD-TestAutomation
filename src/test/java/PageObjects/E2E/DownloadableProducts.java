@@ -63,11 +63,11 @@ public class DownloadableProducts {
         addToCartButton.click();
     }
     public void myAccount(){
-        WebElement doubleclick = driver.findElement(By.cssSelector(".header-links [href=\"/customer/info\"]"));
-        action.contextClick(doubleclick).perform();
+        //WebElement doubleclick = driver.findElement(By.cssSelector(".header-links [href=\"/customer/info\"]"));
+        //action.contextClick(doubleclick).perform();
 
-
-        // myAccount.click(); //replace with
+        myAccount.click();
+        myAccount.click(); //replace with
         downloadableProduct.click();
     }
     public void checkout(){
