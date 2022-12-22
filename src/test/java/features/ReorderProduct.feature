@@ -1,3 +1,4 @@
+@regression
 Feature: Reorder Product
   Scenario: Customer Reordering Product
     Given Customer Logging in
