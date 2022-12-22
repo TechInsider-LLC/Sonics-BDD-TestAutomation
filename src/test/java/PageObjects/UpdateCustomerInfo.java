@@ -12,13 +12,14 @@ import static utilities.Hooks.driver;
 import static utilities.Hooks.wait;
 
 public class UpdateCustomerInfo {
+    String name;
+
     public String url = "https://demowebshop.tricentis.com/";
-    @FindBy(css = ".header-links [href=\"/customer/info\"]")
+    @FindBy(css = ".footer-menu-wrapper [href=\"/customer/info\"]")
     @CacheLookup
     WebElement myAccount;
 
     @FindBy(css = "#FirstName")
-    @CacheLookup
     WebElement firstName;
 
     @FindBy(css = "#LastName")
@@ -29,16 +30,17 @@ public class UpdateCustomerInfo {
     @CacheLookup
     WebElement saveButton;
 
-    @FindBy(css = "#FirstName")
+   /* @FindBy(css = "#FirstName")
     @CacheLookup
-    WebElement isFirstNameUpdated;
-
+    WebElement actualResult;
+*/
     public void homepage() {
 
         driver.get(url);
     }
 
     public void with(String FirstName, String LastName) {
+        name = String.valueOf(firstName);
         myAccount.click();
         firstName.clear();
         firstName.sendKeys(FirstName);
@@ -47,11 +49,11 @@ public class UpdateCustomerInfo {
         saveButton.click();
     }
 
-    public static boolean isFirstNameUpdated() {
-        String expected = "RandomName";
-        String actual = driver.findElement(By.cssSelector("#FirstName")).getText();
-        return (expected.contains(actual));
+    public boolean isFirstNameUpdated() {
+        String expected = name;
+     //   wait.until(ExpectedConditions.textToBe(By.cssSelector("#FirstName"),expected));
+        String actual = firstName.getText();
+        return (expected.equals(actual));
     }
 
 }
-
