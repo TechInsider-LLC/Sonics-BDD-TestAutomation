@@ -37,7 +37,7 @@ public class CommunityPoll {
     }
     public boolean isErrorMessageDisplayed(){
         String expected= "Only registered users can vote.";
-        String actual= driver.findElement(By.cssSelector(".poll-vote-error")).getText();
+        String actual= driver.findElement(By.cssSelector(".poll-vote-error"),expected));
         return (expected.contains(actual));
     }
 
