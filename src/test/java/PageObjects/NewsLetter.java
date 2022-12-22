@@ -22,6 +22,14 @@ public class NewsLetter {
     @CacheLookup
     WebElement subscribeButton;
 
+    @FindBy(css = ".newsletter-result-block")
+    @CacheLookup
+    WebElement successMessageActualResult;
+
+    @FindBy(css = ".newsletter-result-block")
+    @CacheLookup
+    WebElement failureMessageActualResult;
+
 
     public void homepage() {
 
@@ -36,14 +44,22 @@ public class NewsLetter {
     public boolean isSuccessMessagePresent() {
         String expected = "Thank you for signing up!";
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".newsletter-result-block")));
-        String actual = driver.findElement(By.cssSelector(".newsletter-result-block")).getText();
-        return (expected.equals(actual));
+        String actual = successMessageActualResult.getText();
+        if (actual.equals("")){
+            return false;
+        }else{
+            return expected.contains(actual);
+        }
     }
 
     public boolean isFailureMessagePresent() {
         String expected = "Enter valid email";
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".newsletter-result-block")));
-        String actual = driver.findElement(By.cssSelector(".newsletter-result-block")).getText();
-        return (expected.equals(actual));
+        String actual = failureMessageActualResult.getText();
+        if (actual.equals("")){
+            return false;
+        }else{
+            return expected.contains(actual);
+        }
     }
 }
