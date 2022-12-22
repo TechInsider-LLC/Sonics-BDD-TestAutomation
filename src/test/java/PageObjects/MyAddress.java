@@ -146,20 +146,14 @@ public class MyAddress {
      }
     }
 
- public boolean isTheNewAddressIsDeleted(){
-        Alert alert = driver.switchTo().alert();
-        alert.accept();
-        String expected = "Eduard W4RRGDGS";
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@class='title']/*[contains(text(),'Eduard W4RRGDGS')]")));
-        String actual = newAddressDeletedActualResult.getText();
-     if (actual.equals("")){
-         return false;
-     }else{
-         return expected.contains(actual);
-     }
-    }
-
-
-}
+ public boolean isTheNewAddressIsDeleted() {
+     Alert alert = driver.switchTo().alert();
+     alert.accept();
+     String expected = "Eduard W4RRGDGS";
+     wait.until(ExpectedConditions.textToBe(By.xpath("//*[@class='title']/*[contains(text(),'Eduard W4RRGDGS')]"), expected));
+     String actual = newAddressDeletedActualResult.getText();
+     return (expected.equals(actual));
+ }
+ }
 
 
