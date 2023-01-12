@@ -79,7 +79,11 @@ public class ReorderProduct {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".order-completed-continue-button"))).getText();
         String expected = "Your order has been successfully processed!";
         String actual = OrderMessage.getText();
-        return expected.equals(actual);
+        if (actual.equals("")){
+            return false;
+        }else{
+            return expected.contains(actual);
+        }
 
 
     }

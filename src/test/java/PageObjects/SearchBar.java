@@ -19,6 +19,10 @@ public class SearchBar {
     @CacheLookup
     WebElement isHealthBook;
 
+    @FindBy(css= ".product-title [href=\"/health\"]")
+    @CacheLookup
+    WebElement healthBookActualResult;
+
   public void homepage(){
       driver.get(url);
   }
@@ -28,7 +32,11 @@ public class SearchBar {
   }
   public boolean isHealthBookFound(){
      String expected = "Health Book";
-     String actual = driver.findElement(By.cssSelector(".product-title [href=\"/health\"]")).getText();
-     return (expected.contains(actual));
+     String actual = healthBookActualResult.getText();
+      if (actual.equals("")){
+          return false;
+      }else{
+          return expected.contains(actual);
+      }
   }
 }

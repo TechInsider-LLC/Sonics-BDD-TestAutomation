@@ -22,6 +22,14 @@ public class NewsLetter {
     @CacheLookup
     WebElement subscribeButton;
 
+    @FindBy(css = ".newsletter-result-block")
+    @CacheLookup
+    WebElement successMessageActualResult;
+
+    @FindBy(css = ".newsletter-result-block")
+    @CacheLookup
+    WebElement failureMessageActualResult;
+
 
     public void homepage() {
 
@@ -34,16 +42,16 @@ public class NewsLetter {
     }
 
     public boolean isSuccessMessagePresent() {
-        String expected = "Thank you for signing up!";
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".newsletter-result-block")));
-        String actual = driver.findElement(By.cssSelector(".newsletter-result-block")).getText();
+        String expected = "Thank you for signing up! A verification email has been sent. We appreciate your interest.";
+        wait.until(ExpectedConditions.textToBe(By.xpath("//*[@class='listbox']/..//*[contains(text(),'Thank you for signing up!')]"),expected));
+        String actual= this.successMessageActualResult.getText();
         return (expected.equals(actual));
     }
 
     public boolean isFailureMessagePresent() {
         String expected = "Enter valid email";
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".newsletter-result-block")));
-        String actual = driver.findElement(By.cssSelector(".newsletter-result-block")).getText();
+        wait.until(ExpectedConditions.textToBe(By.xpath("//*[@class='listbox']/..//*[contains(text(),'Enter valid email')]"),expected));
+        String actual= this.failureMessageActualResult.getText();
         return (expected.equals(actual));
     }
 }

@@ -19,7 +19,7 @@ public class Hooks {
     public void setUp(){
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.setHeadless(false);
+        options.setHeadless(true);
 
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
@@ -28,7 +28,8 @@ public class Hooks {
     }
     @After
     public void tearDown(){
-          driver.quit();
+
+        driver.quit();
     }
 }
 

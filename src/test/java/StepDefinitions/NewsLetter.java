@@ -30,8 +30,7 @@ public class NewsLetter {
 
     @When("User tires to sign with invalid username")
     public void user_tires_to_sign_with_invalid_username() {
-
-        newsLetter.signUpProcess("dj@gmail.com");
+        newsLetter.signUpProcess("dj");
     }
     @Then("User gets the failure message")
     public void user_gets_the_failure_message() {
